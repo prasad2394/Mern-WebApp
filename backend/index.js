@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const router = require("./router/auth-router");
 const connectDb = require("./utils/db");
+const errorMiddleware = require('./middlewares/error-middleware');
 
 // Middleware
 app.use(express.json());
@@ -10,6 +11,7 @@ app.use(express.json());
 // Mount Router
 app.use("/api/auth", router);
 
+app.use(errorMiddleware);
 
 // app.get("/", (req, res) => {
 //     res.status(200).send("App is Working...")
