@@ -1,8 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Urbanist, system-ui, Avenir, Helvetica, Arial sans-serif;
 }
 
 :root{
@@ -14,4 +17,8 @@
 
 html{
   font-size: 100%;
+}
+
+body{
+  font-family: "Sen", sans-serif;
 }

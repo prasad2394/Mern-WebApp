@@ -6,6 +6,7 @@ import Services from "./pages/Services";
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
               <Route path="/register" element={<Registration />} />
               <Route path="/login" element={<Login />} />
           </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
