@@ -1,5 +1,12 @@
+import PageBanner from "../components/PageBanner"
+
 const About = () => {
-  return <h1>About Page</h1>
+  return (
+    <>
+      <PageBanner pagename="About Us" />
+    </>
+  )
+  
 }
 
 export default About

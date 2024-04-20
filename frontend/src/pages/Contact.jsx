@@ -1,6 +1,8 @@
+import PageBanner from "../components/PageBanner"
+
 const Contact = () => {
   return (
-    <div>Contact</div>
+    <PageBanner pagename="Contact Us" />
   )
 }
 
