@@ -1,6 +1,8 @@
+import PageBanner from "../components/PageBanner"
+
 const Registration = () => {
   return (
-    <div>Registration</div>
+    <PageBanner pagename="Register" />
   )
 }
 

@@ -1,6 +1,8 @@
+import PageBanner from "../components/PageBanner"
+
 const Login = () => {
   return (
-    <div>Login</div>
+    <PageBanner pagename="Login" />
   )
 }
 
