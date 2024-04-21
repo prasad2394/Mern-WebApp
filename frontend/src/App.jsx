@@ -7,7 +7,9 @@ import Registration from "./pages/Registration";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Profile from "./pages/dashboard/Profile";
+import Profile from "./dashboard/Profile";
+import Error from "./pages/Error";
+import Logout from "./pages/Logout";
 
 const App = () => {
   return (
@@ -21,6 +23,8 @@ const App = () => {
               <Route path="/services" element={<Services />} />
               <Route path="/register" element={<Registration />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/logout" element={<Logout />} />
+              <Route path="*" element={<Error />} />
               <Route path="/dashboard/profile" element={<Profile />} />
           </Routes>
         <Footer />

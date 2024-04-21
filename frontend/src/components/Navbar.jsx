@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import { useEffect, useState } from "react";
+import { useAuth } from "../store/auth";
 
 const Navbar = () => {
 
@@ -24,6 +25,8 @@ const Navbar = () => {
         };
     }, []);
 
+    const {isLoggedIn} = useAuth();
+
     return (
     <>
         <header className={`${
@@ -44,8 +47,14 @@ const Navbar = () => {
                     <li className="nav-item"><NavLink to="/about" className="nav-link">About</NavLink></li>
                     <li className="nav-item"><NavLink to="/services" className="nav-link">Services</NavLink></li>
                     <li className="nav-item"><NavLink to="/contact" className="nav-link">Contact</NavLink></li>
+                    {isLoggedIn ? (
+                    <li className="nav-item"><NavLink to="/logout">Logout</NavLink></li>
+                    ) : (
+                    <>
                     <li className="nav-item"><NavLink to="/register" className="nav-link">Register</NavLink></li>
                     <li className="nav-item"><NavLink to="/login" className="nav-link">Login</NavLink></li>
+                    </>
+                    )}
                 </ul>
                 </nav>
             </div>

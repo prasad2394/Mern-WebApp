@@ -50,7 +50,8 @@ userSchema.methods.comparePassword = async function(password) {
 //JSON Web Token
 userSchema.methods.generateToken = async function() {
     try {
-        return jwt.sign({
+        return jwt.sign(
+            {
             userId: this._id.toString(),
             email: this.email,
             isAdmin: this.isAdmin,
