@@ -1,5 +1,4 @@
 const User = require("../models/user-model");
-const bcrypt = require("bcryptjs");
 
 const home = async (req, res) => {
     try {
