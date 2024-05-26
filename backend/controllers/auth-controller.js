@@ -19,7 +19,7 @@ const register = async (req, res) => {
         const {username, email, phone, password} = req.body;
         const userExists = await User.findOne({email});
         if(userExists){
-            return res.status(400).json({msg:"Email Already Register"});
+            return res.status(400).json({message:"Email Already Register"});
         }
 
         const userCreated = await User.create({
@@ -30,7 +30,7 @@ const register = async (req, res) => {
         });
 
         res.status(201).json({
-            msg: "Registration Successful", 
+            message: "Registration Successful", 
             token: await userCreated.generateToken(), 
             userId: userCreated._id.toString(),
         });
@@ -49,21 +49,22 @@ const login = async (req, res) => {
         console.log(userExists);
 
         if(!userExists) {
-            return res.status(400).json({msg:"This Name User Not Available.. Please Register First"});
+            return res.status(400).json({message:"This Name User Not Available.. Please Register First"});
         }
         const user = await userExists.comparePassword(password);
         
         if(user){
             return res.status(200).json({
-                msg:"Login Successful",
+                message:"Login Successful",
                 token: await userExists.generateToken(),
                 userId: userExists._id.toString(),
             });
         } else {
-            res.status(401).json({msg:"Invalid Password"});
+            res.status(401).json({message:"Invalid Password"});
         }
     } catch (error) {
-        res.status(500).json("Internal Server Error");
+        //res.status(500).json("Internal Server Error");
+        next();
     }
 }
 
