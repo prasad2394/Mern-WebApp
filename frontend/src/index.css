@@ -22,3 +22,8 @@ html{
 body{
   font-family: "Sen", sans-serif;
 }
+/* React Toastify CSS */
+.toastBody {
+  font-family: "Sen", sans-serif;
+  font-size: 0.875rem !important;
+}

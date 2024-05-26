@@ -48,12 +48,18 @@ const Navbar = () => {
                     <li className="nav-item"><NavLink to="/services" className="nav-link">Services</NavLink></li>
                     <li className="nav-item"><NavLink to="/contact" className="nav-link">Contact</NavLink></li>
                     {isLoggedIn ? (
-                    <li className="nav-item"><NavLink to="/logout">Logout</NavLink></li>
+                        <li className="nav-item">
+                            <NavLink to="/logout" className="nav-link">Logout</NavLink>
+                        </li>
                     ) : (
-                    <>
-                    <li className="nav-item"><NavLink to="/register" className="nav-link">Register</NavLink></li>
-                    <li className="nav-item"><NavLink to="/login" className="nav-link">Login</NavLink></li>
-                    </>
+                        <>
+                            <li className="nav-item">
+                                <NavLink to="/login" className="nav-link">Login</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink to="/register" className="nav-link">Register</NavLink>
+                            </li>
+                        </>
                     )}
                 </ul>
                 </nav>

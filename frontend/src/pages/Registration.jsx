@@ -2,6 +2,7 @@ import { useState } from "react";
 import {useNavigate} from "react-router-dom";
 import PageBanner from "../components/PageBanner"
 import { useAuth } from "../store/auth";
+import { toast } from "react-toastify";
 
 const Registration = () => {
 
@@ -40,14 +41,18 @@ const Registration = () => {
         
           body: JSON.stringify(user),       
       });
-      console.log(response);
+      
+      const data = await response.json();
+      console.log("Response from Server", data.extraDetails);
+
       if (response.ok) {
-          const data = await response.json();
-          console.log("Response from Server", data);
           //Store Token in Local Storage
           storeTokeninLS(data.token);
           setUser({username:"", email:"", phone:"", password:""});
-          navigate("/login");
+          toast.success(data.message);
+          navigate("/dashboard/profile");
+      } else {
+        toast.error(data.extraDetails ? data.extraDetails : data.message);
       }
     } catch (error) {
       console.log("Registration Failed", error);

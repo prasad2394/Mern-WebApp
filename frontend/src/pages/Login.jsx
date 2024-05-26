@@ -2,6 +2,7 @@ import { useState } from "react";
 import PageBanner from "../components/PageBanner"
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../store/auth";
+import { toast } from "react-toastify";
 
 const URL = "http://localhost:5000/api/auth/login";
 
@@ -43,14 +44,20 @@ const Login = () => {
         
           body: JSON.stringify(user),       
       });
-      console.log(response);
+
+
+      const data = await response.json();
+      console.log("Response from Server", data);
+
+
       if (response.ok) {
-          const data = await response.json();
-          console.log("Response from Server", data);
           //Store Token in Local Storage
           storeTokeninLS(data.token);
           setUser({ email:"", password:""});
+          toast.success(data.message);
           navigate("/dashboard/profile");
+      } else {
+        toast.error(data.extraDetails ? data.extraDetails : data.message);
       }
     } catch (error) {
       console.log("Login Failed", error);
