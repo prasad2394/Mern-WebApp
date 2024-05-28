@@ -1,5 +1,90 @@
 import Banner from "../components/Banner";
+import { RectangleGroupIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid';
+import SiteTitle from "../components/SiteTitle";
+
 const Home = () => {
+
+  const features = [
+    {
+      name: 'PWAs.',
+      description:
+        'Transform your web presence with our expertise in Single Page Applications (SPA) and Progressive Web Apps (PWA), delivering fast, responsive, and engaging user experiences.',
+      icon: RectangleGroupIcon,
+    },
+    {
+      name: 'WP.',
+      description: 'Boost your business with our professional WordPress development services, crafting custom themes and plugins to meet your unique needs.',
+      icon: LockClosedIcon,
+    },
+    {
+      name: 'AI.',
+      description: 'AI Onliner is your premier destination for cutting-edge artificial intelligence solutions designed to transform your business operations.',
+      icon: ServerIcon,
+    },
+  ]
+
+  const whyChoose = [
+    {
+      icon : RectangleGroupIcon,
+      title : 'Research & Development',
+      description : 'A workshop to answer critical questions, plan the features of your product and reduce the risk.',
+    },
+    {
+      icon : RectangleGroupIcon,
+      title : 'Unique Design',
+      description : 'A workshop to answer critical questions, plan the features of your product and reduce the risk.',
+    },
+    {
+      icon : RectangleGroupIcon,
+      title : '24 X 7 Support',
+      description : 'A workshop to answer critical questions, plan the features of your product and reduce the risk.',
+    }
+
+  ]
+
+  const clients = [
+    {
+        alt : "reactjs",
+        img : "/src/assets/images/react.png",
+    },
+    {
+      alt : "angular",
+      img : "/src/assets/images/shape.png",
+    },
+    {
+      alt : "javascript",
+      img : "/src/assets/images/java-script.png",
+    },
+    {
+      alt : "php",
+      img : "/src/assets/images/web.png",
+    },
+    {
+      alt : "wordpress",
+      img : "/src/assets/images/wordpress.png",
+    }
+  ]
+
+  const posts = [
+    {
+      id: 1,
+      title: 'Boost your conversion rate',
+      href: '#',
+      description:
+        'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+      date: 'Mar 16, 2020',
+      datetime: '2020-03-16',
+      category: { title: 'Marketing', href: '#' },
+      author: {
+        name: 'Michael Foster',
+        role: 'Co-Founder / CTO',
+        href: '#',
+        imageUrl:
+          'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      },
+    },
+  ]
+
   return (
     <>
       <div className="bg-slate-100 py-20">
@@ -12,19 +97,132 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="py-20">
-        <div className="container md:mx-auto">
-          <div className="grid grid-cols-2 gap-2">
-          <div className="">
-            <h2 className="text-4xl font-bold mb-5">About Us</h2>
-            <p className="text-slate-700 text-lg">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut sem magna, sodales varius mi non, lacinia consequat quam. Proin quis massa tincidunt, interdum lorem tempus, varius turpis. Vestibulum eget arcu posuere, molestie purus sed, porta erat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum rhoncus tellus ex, eu porttitor orci pretium id. Morbi eu porttitor augue. Sed posuere, risus nec vestibulum finibus, nunc nisi dignissim urna, eget tristique dolor lorem vel nunc. Nullam vitae pharetra ante. Proin gravida nunc tellus, a maximus ante pharetra id. Quisque bibendum nisl non tellus aliquam aliquet. Etiam ut venenatis quam. Suspendisse id dui eros.</p>
-          </div>
-          <div className="text-center">
-              <img className="h-72 mx-auto w-auto" src="/src/assets/logo/computer-spider.png" />
-          </div>
+      <div className="overflow-hidden bg-white py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+            <div className="lg:pr-8 lg:pt-4">
+              <div className="lg:max-w-lg">
+                <h2 className="text-base font-semibold leading-7 text-blue-600">About Us</h2>
+                <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">A better workflow</p>
+                <p className="mt-6 text-lg leading-8 text-gray-600">
+                Transform your web presence with our expertise in SPAs, PWAs, and WordPress development, designed to boost your business and elevate your digital footprint.
+                </p>
+                <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+                  {features.map((feature) => (
+                    <div key={feature.name} className="relative pl-9">
+                      <dt className="inline font-semibold text-gray-900">
+                        <feature.icon className="absolute left-1 top-1 h-5 w-5 text-blue-600" aria-hidden="true" />
+                        {feature.name}
+                      </dt>{' '}
+                      <dd className="inline">{feature.description}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </div>
+            <img
+              src="/src/assets/images/about-banner.webp"
+              alt="Product screenshot"
+              className="w-[48rem] max-w-none"
+              width={2432}
+              height={1442}
+            />
           </div>
         </div>
       </div>
+
+      <div className="whychoose py-24 bg-slate-100">
+          <SiteTitle title="Why Choose us" />
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid grid-cols-3 gap-1">
+              {whyChoose.map((whyChoose) => (
+                <div key={whyChoose.title} >
+                    <div className="relative">
+                      <div className="group relative cursor-pointer overflow-hidden bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:mx-auto sm:max-w-sm sm:rounded-lg sm:px-10 hover:bg-blue-600">
+                          {/* <span className="absolute top-10 z-0  transition-all duration-300 group-hover:scale-[10]"></span> */}
+                          <div className="relative z-10 mx-auto max-w-md">
+                              <whyChoose.icon className="p-2 h-14 w-14 rounded-md place-items-center text-blue-600 transition-all duration-30 group-hover:bg-blue-400 group-hover:text-white"/>
+                              <div className="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
+                                  <h3>{whyChoose.title}</h3>
+                                  <p>{whyChoose.description}</p>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+              ))} 
+            </div>
+          </div>  
+      </div>
+
+      <div className="platforms py-28 ">
+          <SiteTitle title="Platforms We Work" />
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+              <div className="grid grid-cols-5 gap-2">
+                  {clients.map((logo) => (
+                  <div key={logo.alt}>
+                      <div className="client_image align-middle text-center">
+                          <img src={logo.img} className="h-20 my-4 mx-auto"/>
+                          <h5 className="capitalize">{logo.alt}</h5>
+                      </div>
+                  </div>
+                   ))}
+              </div>
+          </div>
+      </div>
+
+      
+      <div className="bg-white py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">From the blog</h2>
+            <p className="mt-2 text-lg leading-8 text-gray-600">
+              Learn how to grow your business with our expert advice.
+            </p>
+          </div>
+          <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+            {posts.map((post) => (
+              <article key={post.id} className="flex max-w-xl bg-slate-50 p-4 rounded-md flex-col items-start justify-between">
+                <div className="flex items-center gap-x-4 text-xs">
+                  <time dateTime={post.datetime} className="text-gray-500">
+                    {post.date}
+                  </time>
+                  <a
+                    href={post.category.href}
+                    className="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                  >
+                    {post.category.title}
+                  </a>
+                </div>
+                <div className="group relative">
+                  <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                    <a href={post.href}>
+                      <span className="absolute inset-0" />
+                      {post.title}
+                    </a>
+                  </h3>
+                  <p className="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{post.description}</p>
+                </div>
+                <div className="relative mt-8 flex items-center gap-x-4">
+                  <img src={post.author.imageUrl} alt="" className="h-10 w-10 rounded-full bg-gray-50" />
+                  <div className="text-sm leading-6">
+                    <p className="font-semibold text-gray-900">
+                      <a href={post.author.href}>
+                        <span className="absolute inset-0" />
+                        {post.author.name}
+                      </a>
+                    </p>
+                    <p className="text-gray-600">{post.author.role}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+
+
+
     </>
   );
 }

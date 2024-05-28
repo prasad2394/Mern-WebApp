@@ -30,7 +30,7 @@ const Navbar = () => {
     return (
     <>
         <header className={`${
-        isSticky ? 'sticky top-0 shadow-lg bg-white text-black' : 'bg-white text-black'
+        isSticky ? 'z-20 sticky top-0 shadow-lg bg-white text-black' : 'bg-white text-black'
       } transition-all duration-300 ease-in-out`}>
             <div className="container mx-auto flex justify-between items-center p-4">
                 {/* Logo */}
