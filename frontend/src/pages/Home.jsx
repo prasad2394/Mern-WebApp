@@ -83,6 +83,23 @@ const Home = () => {
           'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
       },
     },
+    {
+      id: 2,
+      title: 'Boost your React Knowledge',
+      href: '#',
+      description:
+        'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel. Iusto corrupti dicta.',
+      date: 'Mar 31, 2023',
+      datetime: '2023-05-31',
+      category: { title: 'Tech', href: '#' },
+      author: {
+        name: 'Mark',
+        role: 'Co-Founder / CTO',
+        href: '#',
+        imageUrl:
+          'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      },
+    },
   ]
 
   return (
