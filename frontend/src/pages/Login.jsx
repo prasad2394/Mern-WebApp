@@ -3,7 +3,7 @@ import PageBanner from "../components/PageBanner"
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../store/auth";
 import { toast } from "react-toastify";
-import Input from "../components/Input";
+import InputComponent from "../components/Input"
 
 const URL = "http://localhost:5000/api/auth/login";
 
@@ -84,8 +84,8 @@ const Login = () => {
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="max-w-md mx-auto" onSubmit={handleFormSubmit}>
-            <Input inputType="email" name="email" value={user.email} onChange={handleInput} placeholder="Email address"/>
-            <Input inputType="password" name="password" value={user.password} onChange={handleInput} placeholder="Enter Password"/>
+            <InputComponent inputType="email" name="email" value={user.email} onChange={handleInput} placeholder="Email address"/>
+            <InputComponent inputType="password" name="password" value={user.password} onChange={handleInput} placeholder="Enter Password"/>
             <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
           </form>
           <p className="mt-10 text-center text-sm text-gray-500">

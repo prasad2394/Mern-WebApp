@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 import PageBanner from "../components/PageBanner"
 import { useAuth } from "../store/auth";
 import { toast } from "react-toastify";
-import Input from "../components/Input";
+import InputComponent from "../components/Input"
 
 const Registration = () => {
 
@@ -79,10 +79,10 @@ const Registration = () => {
 
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
             <form onSubmit={handleFormSubmit} className="space-y-6">
-              <Input inputType="text" name="username" value={user.username} onChange={handleInput} placeholder="Enter Username"/>
-              <Input inputType="email" name="email" value={user.email} onChange={handleInput} placeholder="Email address"/>
-              <Input inputType="number" name="phone" value={user.phone} onChange={handleInput} placeholder="Enter Phone Number"/>
-              <Input inputType="password" name="password" value={user.password} onChange={handleInput} placeholder="Enter Password"/>
+              <InputComponent inputType="text" name="username" value={user.username} onChange={handleInput} placeholder="Enter Username"/>
+              <InputComponent inputType="email" name="email" value={user.email} onChange={handleInput} placeholder="Email address"/>
+              <InputComponent inputType="number" name="phone" value={user.phone} onChange={handleInput} placeholder="Enter Phone Number"/>
+              <InputComponent inputType="password" name="password" value={user.password} onChange={handleInput} placeholder="Enter Password"/>
               <div>
                 <button
                   type="submit"
