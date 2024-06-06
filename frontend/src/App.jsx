@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import Profile from "./dashboard/Profile";
 import Error from "./pages/Error";
 import Logout from "./pages/Logout";
+import SinglePost from "./pages/SingleBlog";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
               <Route path="/login" element={<Login />} />
               <Route path="/logout" element={<Logout />} />
               <Route path="*" element={<Error />} />
+              <Route path="/blog/:id" element={<SinglePost/>} />
               <Route path="/dashboard/profile" element={<Profile />} />
           </Routes>
         <Footer />
